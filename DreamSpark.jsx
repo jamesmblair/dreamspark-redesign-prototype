@@ -324,8 +324,27 @@ var RegistrationEmailPage = React.createClass({
 var BrowsePage = React.createClass({
 	render: function() {
 		return (
-			<div>
-				<h1>Browse page!</h1>
+			<div style={{ 'text-align' : 'center' }}>
+				<div className='row'>
+					<div className='col-md-12'>
+						<h2>Dev Tools</h2>
+					</div>
+				</div>
+				<div className='row'>
+					<div className='col-md-12'>
+						<h2>Design Tools</h2>
+					</div>
+				</div>
+				<div className='row'>
+					<div className='col-md-12'>
+						<h2>Operating Systems</h2>
+					</div>
+				</div>
+				<div className='row'>
+					<div className='col-md-12'>
+						<h2>Productivity Software</h2>
+					</div>
+				</div>
 			</div>
 		);
 	}
@@ -365,11 +384,11 @@ var DetailsPage = React.createClass({
 						<h3>Other Downloads</h3>
 						<p style={{ 'text-align' : 'justify' }}>
 							<ul style={{ 'list-style' : 'none', 'padding-left' : '0' }}>
-								<li>Windows (x86)</li>
-								<li>Windows (x64)</li>
-								<li>Mac OS X</li>
-								<li>Linux (x86)</li>
-								<li>Linux (x64)</li>
+								<li><a href='javascript:void(0);'>Windows (x86)</a></li>
+								<li><a href='javascript:void(0);'>Windows (x64)</a></li>
+								<li><a href='javascript:void(0);'>Mac OS X</a></li>
+								<li><a href='javascript:void(0);'>Linux (x86)</a></li>
+								<li><a href='javascript:void(0);'>Linux (x64)</a></li>
 							</ul>
 						</p>
 					</div>
