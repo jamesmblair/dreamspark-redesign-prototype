@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Microsoft's DreamSpark</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<!-- <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />	 -->
+	<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.2.0/css/bootstrap.min.css" />
+
+	<style type="text/css">
+
+
+		.jumbotron {
+			background-image: url(http://placehold.it/1440x450);
+			height: 450px;
+		}
+
+		.jumbotron .jumbotron-content-wrapper {
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+
+		.jumbotron button {
+			width: 20em;
+			height: 4em;
+			border-radius: 0;
+		}
+
+			.jumbotron button:hover {
+
+			}
+
+		.login-form {
+			max-width: 330px;
+			padding: 15px;
+			margin: 0 auto;
+			margin-top: 50px;
+			box-shadow: 3px 3px 1px #888888;
+			background-color: #ffffff;
+		}
+
+		.login-form .form-control {
+			position: relative;
+			height: auto;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 10px;
+			font-size: 16px;
+		}
+
+		.login-form input[type="email"] {
+			margin-bottom: -1px;
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="reactMountPoint"></div>
+
+	<!--[if lt IE 9]>
+	  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	  <script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.js"></script>
+	  <script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-sham.js"></script>
+	<![endif]--> 
+
+	<script type="text/javascript" src="react-with-addons-0.12.0.min.js"></script>	
+	<script type="text/javascript" src="JSXTransformer-0.12.0.js"></script>
+	<script type="text/javascript" src="react-bootstrap.min.js"></script>
+	<script type="text/jsx" src="DreamSpark.jsx"></script>
+	<script type="text/jsx">
+		React.renderComponent(
+			<DreamSpark />,
+			document.getElementById('reactMountPoint')
+		);
+	</script>
+</body>
+</html>
