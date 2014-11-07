@@ -360,33 +360,25 @@ var BrowsePage = React.createClass({
 		return (
 			<div style={{ 'text-align' : 'center' }}>
 				<div className='row'>
-					<div className='col-md-12'>
-						<h2>Dev Tools</h2>
+					<div className='col-md-8 col-md-offset-2'>
+						<br />
+						<ul className="nav nav-pills" role="tablist">
+							<li role="presentation" className="active"><a href="#">Development Tools</a></li>
+							<li role="presentation"><a href="#">Productivity Applications</a></li>
+							<li role="presentation"><a href="#">Server Software</a></li>
+							<li role="presentation"><a href="#">Operating Systems</a></li>
+						</ul>
 							<div className="slidingThing slider responsive">
-								<div><h3>1</h3></div>
-								<div><h3>2</h3></div>
-								<div><h3>3</h3></div>
-								<div><h3>4</h3></div>
-								<div><h3>5</h3></div>
-								<div><h3>6</h3></div>
-								<div><h3>7</h3></div>
-								<div><h3>8</h3></div>
+								<div><img src="/img/products/1.jpg"/></div>
+								<div><img src="/img/products/2.jpg"/></div>
+								<div><img src="/img/products/3.jpg"/></div>
+								<div><img src="/img/products/1.jpg"/></div>
+								<div><img src="/img/products/2.jpg"/></div>
+								<div><img src="/img/products/3.jpg"/></div>
+								<div><img src="/img/products/1.jpg"/></div>
+								<div><img src="/img/products/2.jpg"/></div>
+								<div><img src="/img/products/3.jpg"/></div>
 							</div>
-					</div>
-				</div>
-				<div className='row'>
-					<div className='col-md-12'>
-						<h2>Design Tools</h2>
-					</div>
-				</div>
-				<div className='row'>
-					<div className='col-md-12'>
-						<h2>Operating Systems</h2>
-					</div>
-				</div>
-				<div className='row'>
-					<div className='col-md-12'>
-						<h2>Productivity Software</h2>
 					</div>
 				</div>
 			</div>
