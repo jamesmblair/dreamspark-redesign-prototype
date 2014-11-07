@@ -363,21 +363,21 @@ var BrowsePage = React.createClass({
 					<div className='col-md-8 col-md-offset-2'>
 						<br />
 						<ul className="nav nav-pills" role="tablist">
-							<li role="presentation" className="active"><a href="#">Development Tools</a></li>
-							<li role="presentation"><a href="#">Productivity Applications</a></li>
-							<li role="presentation"><a href="#">Server Software</a></li>
-							<li role="presentation"><a href="#">Operating Systems</a></li>
+							<li role="presentation" className="active"><a href="">Development Tools</a></li>
+							<li role="presentation"><a href="">Productivity Applications</a></li>
+							<li role="presentation"><a href="">Server Software</a></li>
+							<li role="presentation"><a href="">Operating Systems</a></li>
 						</ul>
 							<div className="slidingThing slider responsive">
 								<div><img src="/img/products/1.jpg"/></div>
 								<div><img src="/img/products/2.jpg"/></div>
 								<div><img src="/img/products/3.jpg"/></div>
-								<div><img src="/img/products/1.jpg"/></div>
-								<div><img src="/img/products/2.jpg"/></div>
-								<div><img src="/img/products/3.jpg"/></div>
-								<div><img src="/img/products/1.jpg"/></div>
-								<div><img src="/img/products/2.jpg"/></div>
-								<div><img src="/img/products/3.jpg"/></div>
+								<div><img src="/img/products/4.jpg"/></div>
+								<div><img src="/img/products/5.png"/></div>
+								<div><img src="/img/products/6.jpg"/></div>
+								<div><img src="/img/products/7.jpg"/></div>
+								<div><img src="/img/products/8.jpg"/></div>
+								<div><img src="/img/products/9.jpg"/></div>
 							</div>
 					</div>
 				</div>
