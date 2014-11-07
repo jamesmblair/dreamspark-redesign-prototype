@@ -19,7 +19,7 @@ var LIPSUM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laor
 
 var DreamSpark = React.createClass({
 	getInitialState: function() {
-		return { 
+		return {
 		};
 	},
 	componentDidMount: function() {
@@ -42,7 +42,7 @@ var DreamSpark = React.createClass({
 
 		window.addEventListener('hashchange', this.handleHashChange.bind(this), false);
 
-		this.simulateHashChange('#home');		
+		this.simulateHashChange('#home');
 	},
 	render: function() {
 		var page = this.state.currentPage;
@@ -189,26 +189,26 @@ var HomePage = React.createClass({
 					<div className='col-md-10' style={{ padding : '0' }}>
 						<Jumbotron>
 							<div style={{ position : 'relative', height : '100%' }}>
-								<h1 style={{ 'margin-top' : '0' }}>{selectedItem.detailText}</h1>
+								<h1 style={{ 'margin-top' : '0'}}>{selectedItem.detailText}</h1>
 								<div id='button-wrapper' style={{ position : 'absolute', bottom : '10px', left : '10px' }}>
-									<button className='btn btn-lg' onClick={this.handleRegisterClick}>Register</button>
-									<button className='btn btn-lg' onClick={this.handleLoginClick} style={{ 'margin-left' : '1em' }} >Log In</button>
+									<button className='wire-btn btn btn-lg' onClick={this.handleRegisterClick}>Register</button>
+									<button className='wire-btn btn btn-lg' onClick={this.handleLoginClick} style={{ 'margin-left' : '1em' }} >Log In</button>
 								</div>
-							</div>							
+							</div>
 						</Jumbotron>
 					</div>
 				</div>
 				<div className='row'>
 					<div className='col-md-4'>
-						<img src='http://placehold.it/450x180' style={{ 'width' : '100%' }} />
+						<img src='/img/microsoft-watch.jpg' style={{ 'width' : '100%' }} />
 						<p style={{ 'text-align' : 'justify' }}>{lipsum}</p>
 					</div>
 					<div className='col-md-4'>
-						<img src='http://placehold.it/450x180' style={{ 'width' : '100%' }} />
+						<img src='/img/ms_brands.jpg' style={{ 'width' : '100%' }} />
 						<p style={{ 'text-align' : 'justify' }}>{lipsum}</p>
 					</div>
 					<div className='col-md-4'>
-						<img src='http://placehold.it/450x180' style={{ 'width' : '100%' }} />
+						<img src='/img/microsoft_store.jpg' style={{ 'width' : '100%' }} />
 						<p style={{ 'text-align' : 'justify' }}>{lipsum}</p>
 					</div>
 				</div>
@@ -328,6 +328,16 @@ var BrowsePage = React.createClass({
 				<div className='row'>
 					<div className='col-md-12'>
 						<h2>Dev Tools</h2>
+							<div class="slider responsive">
+								<div><h3>1</h3></div>
+								<div><h3>2</h3></div>
+								<div><h3>3</h3></div>
+								<div><h3>4</h3></div>
+								<div><h3>5</h3></div>
+								<div><h3>6</h3></div>
+								<div><h3>7</h3></div>
+								<div><h3>8</h3></div>
+							</div>
 					</div>
 				</div>
 				<div className='row'>
