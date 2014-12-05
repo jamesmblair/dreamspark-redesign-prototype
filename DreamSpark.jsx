@@ -23,21 +23,6 @@ var DreamSpark = React.createClass({
 		};
 	},
 	componentDidMount: function() {
-		// var auth = {
-		// 	signIn : this.signIn,
-		// 	signOut : this.signOut
-		// }
-
-		// var pages = {
-		// 	'home' : <HomePage navigate={this.handleNavigate} auth={auth} />,
-		// 	'login' : <LoginPage navigate={this.handleNavigate} auth={auth} />,
-		// 	'loginEmail' : <LoginEmailPage navigate={this.handleNavigate} auth={auth} />,
-		// 	'register' : <RegistrationPage navigate={this.handleNavigate} auth={auth} />,
-		// 	'registerEmail' : <RegistrationEmailPage navigate={this.handleNavigate} auth={auth} />,
-		// 	'browse' : <BrowsePage navigate={this.handleNavigate} auth={auth} />,
-		// 	'details' : <DetailsPage navigate={this.handleNavigate} auth={auth} />
-		// };
-
 		this.createPages();
 
 		window.addEventListener('hashchange', this.handleHashChange.bind(this), false);
@@ -123,17 +108,21 @@ var DreamSpark = React.createClass({
 		window.dispatchEvent(event);
 	},
 	signIn: function (redirect) {
-		this.setState({ authenticated : true });
-
-		if (redirect) {
-			window.location.hash = redirect;
-		}
+		this.setState({ 
+			authenticated : true 
+		}, function () {
+			if (redirect) {
+				window.location.hash = redirect;
+			}
+		});
 	},
 	signOut: function () {
-		alert ('You\'ve been signed out!');
-
-		this.setState({ authenticated : false });
-		window.location.hash = 'home';
+		this.setState({ 
+			authenticated : false 
+		}, function () {
+			window.location.hash = 'home';
+			alert ('You\'ve been signed out!');
+		});
 	},
 	requiresAuth: function (hash) {
 		return ['browse', 'details'].contains(hash);
@@ -172,10 +161,23 @@ var HomePage = React.createClass({
 
 		var lipsum = LIPSUM.substring (0, 400) + '...';
 
+		var pillsStyle = {
+			'padding' : '1.5em 0',
+			'font-size' : '1.5em',
+			'font-weight' : 'bold',
+			'text-align' : 'right'
+		};
+
+		var paragraphs = [
+			"DreamSpark is simple: it's all about giving students Microsoft professional-level developer and designer tools at no cost so that students can chase their dreams and create the next big breakthrough in technology - or just get a head start on their career.",
+			"DreamSpark helps educators teach the latest technologies and experiment in research. Microsoft knows that to make learning more motivating, relevant, and engaging for today's students requires a diverse set of resources. DreamSpark gives educators the resources to ensure their classrooms always have the latest technologies to challenge, motivate, and keep students engaged in new ways.",
+			"DreamSpark is also a subscription for Academic Institutions: it provides a cost-effective way to put Microsoft developer tools, platforms and servers in labs and classrooms, and on their students’ and faculty’s computers for learning and research purposes. It reduces lab costs and teaching budgets."
+		];
+
 		return (
 			<div id='home-page-wrapper'>
-				<div className='row'>
-					<div className='col-md-2' style={{ padding : '0' }}>
+				<div className='row image-row'>
+					<div className='col-md-2' style={pillsStyle}>
 						<ul className="nav nav-pills nav-stacked" role="tablist">
 							{navItemNodes}
 						</ul>
@@ -185,8 +187,8 @@ var HomePage = React.createClass({
 							<div style={{ position : 'relative', height : '100%' }}>
 								<h1 style={{ 'margin-top' : '0'}}>{selectedItem.detailText}</h1>
 								<div id='button-wrapper' style={{ position : 'absolute', bottom : '10px', left : '10px' }}>
-									<button className='wire-btn btn btn-lg' onClick={this.handleRegisterClick}>Register</button>
-									<button className='wire-btn btn btn-lg' onClick={this.handleLoginClick} style={{ 'margin-left' : '1em' }} >Log In</button>
+									<button className='btn btn-lg btn-default' onClick={this.handleRegisterClick}>Register</button>
+									<button className='btn btn-lg btn-default' onClick={this.handleLoginClick} style={{ 'margin-left' : '1em' }} >Log In</button>
 								</div>
 							</div>
 						</Jumbotron>
@@ -195,15 +197,15 @@ var HomePage = React.createClass({
 				<div className='row'>
 					<div className='col-md-4'>
 						<img src='/img/microsoft-watch.jpg' style={{ 'width' : '100%' }} />
-						<p style={{ 'text-align' : 'justify' }}>{lipsum}</p>
+						<p style={{ 'text-align' : 'justify' }}>{paragraphs[0]}</p>
 					</div>
 					<div className='col-md-4'>
 						<img src='/img/ms_brands.jpg' style={{ 'width' : '100%' }} />
-						<p style={{ 'text-align' : 'justify' }}>{lipsum}</p>
+						<p style={{ 'text-align' : 'justify' }}>{paragraphs[1]}</p>
 					</div>
 					<div className='col-md-4'>
 						<img src='/img/microsoft_store.jpg' style={{ 'width' : '100%' }} />
-						<p style={{ 'text-align' : 'justify' }}>{lipsum}</p>
+						<p style={{ 'text-align' : 'justify' }}>{paragraphs[2]}</p>
 					</div>
 				</div>
 			</div>
@@ -311,66 +313,87 @@ var RegistrationEmailPage = React.createClass({
 
 var BrowsePage = React.createClass({
 	componentDidMount: function() {
-			$('.responsive').slick({
-				dots: true,
-				infinite: false,
-				speed: 300,
-				slidesToShow: 4,
-				slidesToScroll: 4,
-				responsive: [
-					{
-						breakpoint: 1024,
-						settings: {
-							slidesToShow: 3,
-							slidesToScroll: 3,
-							infinite: true,
-							dots: true
-						}
-					},
-					{
-						breakpoint: 600,
-						settings: {
-							slidesToShow: 2,
-							slidesToScroll: 2
-						}
-					},
-					{
-						breakpoint: 480,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1
-						}
+		$('.responsive').slick({
+			dots: true,
+			infinite: false,
+			speed: 300,
+			slidesToShow: 4,
+			slidesToScroll: 4,
+			responsive: [
+				{
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3,
+						infinite: true,
+						dots: true
 					}
-				]
-			});
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}
+			]
+		});
+	},
+	getInitialState: function() {
+		return {
+			activeTabIndex : 0 
+		};
 	},
 	render: function() {
+		var tabs = [
+			'Development Tools',
+			'Productivity Applications',
+			'Server Software',
+			'Operating Systems'
+		];
+
+		var tabNodes = tabs.map(function (t, i) {
+			var handleTabClick = function () { 
+				this.setState({ activeTabIndex : i });
+			}.bind(this);
+
+			var className = this.state.activeTabIndex === i ? 'active' : '';
+			return <li role="presentation" className={className}><a style={{ 'cursor' : 'pointer' }} onClick={handleTabClick}>{t}</a></li>;
+		}.bind(this));
+
 		return (
 			<div style={{ 'text-align' : 'center' }}>
 				<div className='row'>
 					<div className='col-md-8 col-md-offset-2'>
 						<br />
-						<ul className="nav nav-pills" role="tablist">
-							<li role="presentation" className="active"><a href="">Development Tools</a></li>
-							<li role="presentation"><a href="">Productivity Applications</a></li>
-							<li role="presentation"><a href="">Server Software</a></li>
-							<li role="presentation"><a href="">Operating Systems</a></li>
+						<ul className="nav nav-pills" role="tablist" style={{ 'margin-bottom' : '10px' }}>
+							{tabNodes}
 						</ul>
 							<div className="slidingThing slider responsive">
-								<div><img src="/img/products/1.jpg"/></div>
-								<div><img src="/img/products/2.jpg"/></div>
-								<div><img src="/img/products/3.jpg"/></div>
-								<div><img src="/img/products/4.jpg"/></div>
-								<div><img src="/img/products/5.png"/></div>
-								<div><img src="/img/products/6.jpg"/></div>
-								<div><img src="/img/products/7.jpg"/></div>
-								<div><img src="/img/products/8.jpg"/></div>
-								<div><img src="/img/products/9.jpg"/></div>
+								<div><img onClick={this.handleItemClick} src="/img/products/1.jpg"/></div>
+								<div><img onClick={this.handleItemClick} src="/img/products/2.jpg"/></div>
+								<div><img onClick={this.handleItemClick} src="/img/products/3.jpg"/></div>
+								<div><img onClick={this.handleItemClick} src="/img/products/4.jpg"/></div>
+								<div><img onClick={this.handleItemClick} src="/img/products/5.png"/></div>
+								<div><img onClick={this.handleItemClick} src="/img/products/6.jpg"/></div>
+								<div><img onClick={this.handleItemClick} src="/img/products/7.jpg"/></div>
+								<div><img onClick={this.handleItemClick} src="/img/products/8.jpg"/></div>
+								<div><img onClick={this.handleItemClick} src="/img/products/9.jpg"/></div>
 							</div>
 					</div>
 				</div>
 			</div>
 		);
+	},
+	handleItemClick: function () {
+		
 	}
 });
 

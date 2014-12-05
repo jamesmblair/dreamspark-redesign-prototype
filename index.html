@@ -8,28 +8,38 @@
 	<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.2.0/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="/slick/slick.css" />
 
+	<!-- Google Lato font -->
+	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
 	<style type="text/css">
+		h1, h2, h3, h4, h5, h6, div, p, span {
+			font-family: 'Lato', sans-serif;
+		}
+
+		.image-row {
+			background-image: url(/img/toronto.jpg);
+			background-size: cover;
+			margin-bottom: 0.5em;
+		}
+
 		.nav-pills > li > a {
 			border-radius: 0;
 		}
-		h1 {
-			background: white;
-			background: rgba(255,255,255,0.5);
-			padding: .3ex 1ex;
+
+		.nav-pills > li > a {
+			background-color: #ffffff;
+			background-color: rgba(255, 255, 255, 0.85);
+			color: #000000;
 		}
-		.wire-btn {
-			background: rgba(255,255,255,0.7);
-			border: white solid thin;
-			font-weight: bold;
-			margin: 1ex;
-		}
-		.wire-btn:hover {
-			color: #428bca;
-		}
+
 		.jumbotron {
-			background-image: url(/img/toronto.jpg);
+			background-color: transparent;
 			height: 450px;
 			padding: 30px;
+		}
+
+		.jumbotron h1 {
+			color: #ffffff;
 		}
 
 		.jumbotron .jumbotron-content-wrapper {
@@ -42,6 +52,7 @@
 			height: 4em;
 			border-radius: 0;
 		}
+
 		.slider img {
 			width: 200px;
 			height: 200px;
