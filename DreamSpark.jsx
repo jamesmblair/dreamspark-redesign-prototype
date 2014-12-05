@@ -377,15 +377,15 @@ var BrowsePage = React.createClass({
 							{tabNodes}
 						</ul>
 							<div className="slidingThing slider responsive">
-								<div><img onClick={this.handleItemClick} src="/img/products/1.jpg"/></div>
-								<div><img onClick={this.handleItemClick} src="/img/products/2.jpg"/></div>
-								<div><img onClick={this.handleItemClick} src="/img/products/3.jpg"/></div>
-								<div><img onClick={this.handleItemClick} src="/img/products/4.jpg"/></div>
-								<div><img onClick={this.handleItemClick} src="/img/products/5.png"/></div>
-								<div><img onClick={this.handleItemClick} src="/img/products/6.jpg"/></div>
-								<div><img onClick={this.handleItemClick} src="/img/products/7.jpg"/></div>
-								<div><img onClick={this.handleItemClick} src="/img/products/8.jpg"/></div>
-								<div><img onClick={this.handleItemClick} src="/img/products/9.jpg"/></div>
+								<div><img style={{ 'cursor' : 'pointer' }} onClick={this.handleItemClick} src="/img/products/1.jpg"/></div>
+								<div><img style={{ 'cursor' : 'pointer' }} onClick={this.handleItemClick} src="/img/products/2.jpg"/></div>
+								<div><img style={{ 'cursor' : 'pointer' }} onClick={this.handleItemClick} src="/img/products/3.jpg"/></div>
+								<div><img style={{ 'cursor' : 'pointer' }} onClick={this.handleItemClick} src="/img/products/4.jpg"/></div>
+								<div><img style={{ 'cursor' : 'pointer' }} onClick={this.handleItemClick} src="/img/products/5.png"/></div>
+								<div><img style={{ 'cursor' : 'pointer' }} onClick={this.handleItemClick} src="/img/products/6.jpg"/></div>
+								<div><img style={{ 'cursor' : 'pointer' }} onClick={this.handleItemClick} src="/img/products/7.jpg"/></div>
+								<div><img style={{ 'cursor' : 'pointer' }} onClick={this.handleItemClick} src="/img/products/8.jpg"/></div>
+								<div><img style={{ 'cursor' : 'pointer' }} onClick={this.handleItemClick} src="/img/products/9.jpg"/></div>
 							</div>
 					</div>
 				</div>
@@ -393,29 +393,31 @@ var BrowsePage = React.createClass({
 		);
 	},
 	handleItemClick: function () {
-		
+		this.props.navigate('details');
 	}
 });
 
 var DetailsPage = React.createClass({
 	render: function() {
-		var productTitle = this.props.productTitle || 'Software Product Title';
+		var productTitle = this.props.productTitle || 'Visual Studio 2015';
 
 		var Jumbotron = ReactBootstrap.Jumbotron;
 
+		var vsText = 'Visual Studio is a comprehensive collection of tools and services for developing applications that target the desktop, the web, devices, and the cloud. Whether you are creating your first Windows Store app, or building a website to support the latest browsers, you can leverage your existing skills with Visual Studio’s state-of-the-art development environment for .NET languages, HTML/JavaScript, and C++. For teams working across multiple platforms, Visual Studio provides a flexible collaboration environment for that welcomes connection with other development tools, such as Eclipse and Xcode.';
+
 		return (
 			<div>
-				<div className='row'>
+				<div className='row detail-jumbo-row'>
 					<div class='col-md-12'>
 						<Jumbotron>
-							<div className='col-md-4'>
+							{/*<div className='col-md-4'>
 								<img style={{ 'width' : '80%', 'height' : '80%', 'margin' : '20px', 'border' : '1px solid #000000' }} src='http://placehold.it/350x350' />
-							</div>
-							<div className='col-md-8' style={{ 'height' : '100%' }}>
+							</div>*/}
+							<div className='col-md-12' style={{ 'height' : '100%' }}>
 								<div style={{ 'position' : 'relative', 'height' : '100%' }}>
 									<h1>{productTitle}</h1>
 									<div id='button-wrapper' style={{ position : 'absolute', bottom : '10px', left : '10px' }}>
-										<button className='btn btn-lg'>Download Now</button>
+										<button className='btn btn-lg btn-default'>Download Now</button>
 									</div>
 								</div>
 							</div>
@@ -424,18 +426,18 @@ var DetailsPage = React.createClass({
 				</div>
 				<div className='row' style={{ 'margin-bottom' : '20px' }}>
 					<div className='col-md-6' style={{ 'border-right' : '1px solid #000000' }}>
-						<h3>Notes</h3>
-						<p style={{ 'text-align' : 'justify' }}>{LIPSUM}</p>
+						<h3>Application Development</h3>
+						<p style={{ 'text-align' : 'justify' }}>{vsText}</p>
 					</div>
 					<div className='col-md-6'>
-						<h3>Other Downloads</h3>
+						<h3>Hardware Requirements</h3>
 						<p style={{ 'text-align' : 'justify' }}>
-							<ul style={{ 'list-style' : 'none', 'padding-left' : '0' }}>
-								<li><a href='javascript:void(0);'>Windows (x86)</a></li>
-								<li><a href='javascript:void(0);'>Windows (x64)</a></li>
-								<li><a href='javascript:void(0);'>Mac OS X</a></li>
-								<li><a href='javascript:void(0);'>Linux (x86)</a></li>
-								<li><a href='javascript:void(0);'>Linux (x64)</a></li>
+							<ul>
+								<li>1.6 GHz or faster processor</li>
+								<li>1 GB of RAM (1.5 GB if running on a virtual machine)</li>
+								<li>20 GB of available hard disk space</li>
+								<li>5400 RPM hard disk drive</li>
+								<li>DirectX 9-capable video card that runs at 1024 x 768 or higher display resolution</li>
 							</ul>
 						</p>
 					</div>
