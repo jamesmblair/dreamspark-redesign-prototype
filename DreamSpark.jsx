@@ -227,9 +227,6 @@ var LoginPage = React.createClass({
 			<div>
 				<form className='login-form' action={'javascript:void(0);'}>
 					<button onClick={this.handleItemClick} className='btn btn-lg btn-primary btn-block' style={{ 'margin-top' : '10px' }} data-nav='oauth'>Sign In With Microsoft</button>
-					<button onClick={this.handleItemClick} className='btn btn-lg btn-primary btn-block' style={{ 'margin-top' : '10px' }} data-nav='oauth'>Sign In With Google</button>
-					<button onClick={this.handleItemClick} className='btn btn-lg btn-primary btn-block' style={{ 'margin-top' : '10px' }} data-nav='oauth'>Sign In With Facebook</button>
-					<button onClick={this.handleItemClick} className='btn btn-lg btn-primary btn-block' style={{ 'margin-top' : '10px' }} data-nav='oauth'>Sign In With Twitter</button>
 					<button onClick={this.handleItemClick} className='btn btn-lg btn-primary btn-block' style={{ 'margin-top' : '10px' }} data-nav='email'>Sign In With Email</button>
 				</form>
 			</div>
@@ -274,9 +271,6 @@ var RegistrationPage = React.createClass({
 			<div>
 				<form className='login-form' action={'javascript:void(0);'}>
 					<button onClick={this.handleItemClick} className='btn btn-lg btn-primary btn-block' style={{ 'margin-top' : '10px' }} data-nav='oauth'>Register With Microsoft</button>
-					<button onClick={this.handleItemClick} className='btn btn-lg btn-primary btn-block' style={{ 'margin-top' : '10px' }} data-nav='oauth'>Register With Google</button>
-					<button onClick={this.handleItemClick} className='btn btn-lg btn-primary btn-block' style={{ 'margin-top' : '10px' }} data-nav='oauth'>Register With Facebook</button>
-					<button onClick={this.handleItemClick} className='btn btn-lg btn-primary btn-block' style={{ 'margin-top' : '10px' }} data-nav='oauth'>Register With Twitter</button>
 					<button onClick={this.handleItemClick} className='btn btn-lg btn-primary btn-block' style={{ 'margin-top' : '10px' }} data-nav='email'>Register With Email</button>
 				</form>
 			</div>
