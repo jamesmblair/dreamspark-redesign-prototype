@@ -389,6 +389,16 @@ var BrowsePage = React.createClass({
 							</div>
 					</div>
 				</div>
+				<div className='row' style={{ 'margin-top' : '1em' }}>
+					<div className='col-md-offset-4 col-md-4'>
+						<form action='javascript:void(0);'role='search'>
+							<div className='form-group'>
+								<input type='text' className='form-control' placeholder='Search for software' />
+							</div>
+							<button type='submit' className='btn btn-default' onClick={this.handleItemClick}>Search</button>
+						</form>
+					</div>
+				</div>
 			</div>
 		);
 	},
