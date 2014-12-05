@@ -65,7 +65,7 @@ var DreamSpark = React.createClass({
 				<nav className='navbar navbar-inverse' role='navigation' style={{ 'margin-bottom' : '0', 'border-radius' : '0' }}>
 					<div className='container-fluid'>
 						<div className="navbar-header">
-					      <a className="navbar-brand" href="#">DreamSpark</a>
+					      <a className="navbar-brand" href="#">Microsoft DreamSpark</a>
 					    </div>
 
 					    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
