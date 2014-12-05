@@ -4,17 +4,30 @@
 	<title>Microsoft's DreamSpark</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	
 	<!-- <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />	 -->
 	<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/slick/slick.css" />
 
 	<style type="text/css">
 		.nav-pills > li > a {
 			border-radius: 0;
 		}
-
+		h1 {
+			background: white;
+			background: rgba(255,255,255,0.5);
+			padding: .3ex 1ex;
+		}
+		.wire-btn {
+			background: rgba(255,255,255,0.7);
+			border: white solid thin;
+			font-weight: bold;
+			margin: 1ex;
+		}
+		.wire-btn:hover {
+			color: #428bca;
+		}
 		.jumbotron {
-			background-image: url(http://placehold.it/1440x450);
+			background-image: url(/img/toronto.jpg);
 			height: 450px;
 			padding: 30px;
 		}
@@ -29,11 +42,10 @@
 			height: 4em;
 			border-radius: 0;
 		}
-
-			.jumbotron button:hover {
-
-			}
-
+		.slider img {
+			width: 200px;
+			height: 200px;
+		}
 		.login-form {
 			max-width: 330px;
 			padding: 15px;
@@ -67,9 +79,9 @@
 	  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	  <script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.js"></script>
 	  <script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-sham.js"></script>
-	<![endif]--> 
+	<![endif]-->
 
-	<script type="text/javascript" src="react-with-addons-0.12.0.min.js"></script>	
+	<script type="text/javascript" src="react-with-addons-0.12.0.min.js"></script>
 	<script type="text/javascript" src="JSXTransformer-0.12.0.js"></script>
 	<script type="text/javascript" src="react-bootstrap.min.js"></script>
 	<script type="text/jsx" src="DreamSpark.jsx"></script>
@@ -78,6 +90,13 @@
 			<DreamSpark />,
 			document.getElementById('reactMountPoint')
 		);
+	</script>
+
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="/slick/slick.min.js"></script>
+	<script type="text/javascript">
+
 	</script>
 </body>
 </html>

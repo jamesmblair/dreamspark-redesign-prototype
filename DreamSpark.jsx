@@ -19,7 +19,7 @@ var LIPSUM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laor
 
 var DreamSpark = React.createClass({
 	getInitialState: function() {
-		return { 
+		return {
 		};
 	},
 	componentDidMount: function() {
@@ -42,7 +42,7 @@ var DreamSpark = React.createClass({
 
 		window.addEventListener('hashchange', this.handleHashChange.bind(this), false);
 
-		this.simulateHashChange('#home');		
+		this.simulateHashChange('#home');
 	},
 	render: function() {
 		var page = this.state.currentPage;
@@ -65,12 +65,6 @@ var DreamSpark = React.createClass({
 				<nav className='navbar navbar-inverse' role='navigation' style={{ 'margin-bottom' : '0', 'border-radius' : '0' }}>
 					<div className='container-fluid'>
 						<div className="navbar-header">
-					        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						        <span className="sr-only">Toggle navigation</span>
-						        <span className="icon-bar"></span>
-						        <span className="icon-bar"></span>
-						        <span className="icon-bar"></span>
-					        </button>
 					      <a className="navbar-brand" href="#">DreamSpark</a>
 					    </div>
 
@@ -189,26 +183,26 @@ var HomePage = React.createClass({
 					<div className='col-md-10' style={{ padding : '0' }}>
 						<Jumbotron>
 							<div style={{ position : 'relative', height : '100%' }}>
-								<h1 style={{ 'margin-top' : '0' }}>{selectedItem.detailText}</h1>
+								<h1 style={{ 'margin-top' : '0'}}>{selectedItem.detailText}</h1>
 								<div id='button-wrapper' style={{ position : 'absolute', bottom : '10px', left : '10px' }}>
-									<button className='btn btn-lg' onClick={this.handleRegisterClick}>Register</button>
-									<button className='btn btn-lg' onClick={this.handleLoginClick} style={{ 'margin-left' : '1em' }} >Log In</button>
+									<button className='wire-btn btn btn-lg' onClick={this.handleRegisterClick}>Register</button>
+									<button className='wire-btn btn btn-lg' onClick={this.handleLoginClick} style={{ 'margin-left' : '1em' }} >Log In</button>
 								</div>
-							</div>							
+							</div>
 						</Jumbotron>
 					</div>
 				</div>
 				<div className='row'>
 					<div className='col-md-4'>
-						<img src='http://placehold.it/450x180' style={{ 'width' : '100%' }} />
+						<img src='/img/microsoft-watch.jpg' style={{ 'width' : '100%' }} />
 						<p style={{ 'text-align' : 'justify' }}>{lipsum}</p>
 					</div>
 					<div className='col-md-4'>
-						<img src='http://placehold.it/450x180' style={{ 'width' : '100%' }} />
+						<img src='/img/ms_brands.jpg' style={{ 'width' : '100%' }} />
 						<p style={{ 'text-align' : 'justify' }}>{lipsum}</p>
 					</div>
 					<div className='col-md-4'>
-						<img src='http://placehold.it/450x180' style={{ 'width' : '100%' }} />
+						<img src='/img/microsoft_store.jpg' style={{ 'width' : '100%' }} />
 						<p style={{ 'text-align' : 'justify' }}>{lipsum}</p>
 					</div>
 				</div>
@@ -322,27 +316,63 @@ var RegistrationEmailPage = React.createClass({
 });
 
 var BrowsePage = React.createClass({
+	componentDidMount: function() {
+			$('.responsive').slick({
+				dots: true,
+				infinite: false,
+				speed: 300,
+				slidesToShow: 4,
+				slidesToScroll: 4,
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 3,
+							slidesToScroll: 3,
+							infinite: true,
+							dots: true
+						}
+					},
+					{
+						breakpoint: 600,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 2
+						}
+					},
+					{
+						breakpoint: 480,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1
+						}
+					}
+				]
+			});
+	},
 	render: function() {
 		return (
 			<div style={{ 'text-align' : 'center' }}>
 				<div className='row'>
-					<div className='col-md-12'>
-						<h2>Dev Tools</h2>
-					</div>
-				</div>
-				<div className='row'>
-					<div className='col-md-12'>
-						<h2>Design Tools</h2>
-					</div>
-				</div>
-				<div className='row'>
-					<div className='col-md-12'>
-						<h2>Operating Systems</h2>
-					</div>
-				</div>
-				<div className='row'>
-					<div className='col-md-12'>
-						<h2>Productivity Software</h2>
+					<div className='col-md-8 col-md-offset-2'>
+						<br />
+						<ul className="nav nav-pills" role="tablist">
+							<li role="presentation" className="active"><a href="">Development Tools</a></li>
+							<li role="presentation"><a href="">Productivity Applications</a></li>
+							<li role="presentation"><a href="">Server Software</a></li>
+							<li role="presentation"><a href="">Operating Systems</a></li>
+						</ul>
+							<div className="slidingThing slider responsive">
+								<div><img src="/img/products/1.jpg"/></div>
+								<div><img src="/img/products/2.jpg"/></div>
+								<div><img src="/img/products/3.jpg"/></div>
+								<div><img src="/img/products/4.jpg"/></div>
+								<div><img src="/img/products/5.png"/></div>
+								<div><img src="/img/products/6.jpg"/></div>
+								<div><img src="/img/products/7.jpg"/></div>
+								<div><img src="/img/products/8.jpg"/></div>
+								<div><img src="/img/products/9.jpg"/></div>
+							</div>
 					</div>
 				</div>
 			</div>
